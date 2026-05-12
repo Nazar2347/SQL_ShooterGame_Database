@@ -1,9 +1,9 @@
 CREATE VIEW v_ActiveFriendships AS
 SELECT 
-    p1.username AS inviter,
-    p2.username AS friend,
-    f.created_at AS since
-FROM Friends f
-JOIN Player p1 ON f.inviter_id = p1.player_id
-JOIN Player p2 ON f.receiver_id = p2.player_id
-WHERE f.status = 'accepted';
+    InviterPlayer.username AS inviter,
+    ReceiverPlayer.username AS friend,
+    Friends.created_at AS since
+FROM Friends
+JOIN Player AS InviterPlayer ON Friends.inviter_id = InviterPlayer.player_id
+JOIN Player AS ReceiverPlayer ON Friends.receiver_id = ReceiverPlayer.player_id
+WHERE Friends.status = 'Accepted';
