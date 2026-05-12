@@ -1,9 +1,7 @@
 CREATE TABLE Transactions(
 	transactionId INT IDENTITY(1,1) PRIMARY KEY,
-	player_id INT NOT NULL,
-	item_id INT,
+	player_id INT FOREIGN KEY REFERENCES Player(player_id),
+	item_id INT FOREIGN KEY REFERENCES ITEMS(item_id),
 	amount INT DEFAULT 0 NOT NULL,
-	[timestamp] DATETIME2 DEFAULT GETDATE() NOT NULL,
-	Foreign key (player_id) REFERENCES Player (player_id),
-	Foreign key (item_id) REFERENCES Items (item_id)
+	[timestamp] DATETIME2 DEFAULT GETDATE() NOT NULL
 );
