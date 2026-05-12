@@ -1,1 +1,8 @@
--- fasdfdfaslkj
+CREATE TABLE Items
+(
+	item_id INT IDENTITY (1,1) PRIMARY KEY,
+	name VARCHAR(50)UNIQUE NOT NULL,
+	item_type VARCHAR(50)UNIQUE NOT NULL,
+	price INT DEFAULT 0 NOT NULL,
+	ispurchasable BIT DEFAULT 1 NOT NULL,
+);
