@@ -1,0 +1,6 @@
+CREATE TABLE Inventory(
+	inventory_id INT IDENTITY(1,1) PRIMARY KEY ,
+	player_id INT FOREIGN KEY REFERENCES Player(player_id),
+	item_id INT FOREIGN KEY REFERENCES ITEMS(item_id),
+	acquired_at DATETIME2 DEFAULT GETDATE() NOT NULL,
+);
