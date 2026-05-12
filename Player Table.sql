@@ -1,9 +1,0 @@
-CREATE TABLE Player 
-(
-	player_id INT IDENTITY(1,1) PRIMARY KEY, 
-	username VARCHAR(20)UNIQUE NOT NULL,
-	email VARCHAR(50)UNIQUE NOT NULL,
-	level INT DEFAULT 1,
-	current_balance INT DEFAULT 0,
-	created_at DATETIME DEFAULT GETDATE()
-);

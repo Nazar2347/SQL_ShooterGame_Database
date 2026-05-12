@@ -1,16 +1,14 @@
-CREATE TABLE Friends
+/*CREATE TABLE Player 
 (
-	friendship_id INT IDENTITY(1,1) PRIMARY KEY,
-	inviter_id INT NOT NULL,
-	receiver_id INT NOT NULL,
-	status VARCHAR(20) NOT NULL CHECK (status IN ('pending', 'accepted', 'rejected')),
-	created_at DATETIME DEFAULT GETDATE(),
-	FOREIGN KEY (inviter_id) REFERENCES Player(player_id),
-	FOREIGN KEY (receiver_id) REFERENCES Player(player_id),
-	UNIQUE (inviter_id, receiver_id)
-)
+	player_id INT IDENTITY(1,1) PRIMARY KEY, 
+	username VARCHAR(20)UNIQUE NOT NULL,
+	email VARCHAR(50)UNIQUE NOT NULL,
+	level INT DEFAULT 1,
+	current_balance INT DEFAULT 0,
+	created_at DATETIME DEFAULT GETDATE()
+);*/
 
-INSERT INTO Player (username, email, level, currency_balance, created_at)
+INSERT INTO Player (username, email, level, current_balance, created_at)
 VALUES 
     ('ShadowStrike', 'shadow@example.com', 50, 15000, '2025-01-10T08:00:00'),
     ('NeonValkyrie', 'neon@example.com', 42, 8500, '2025-01-12T14:30:00'),
