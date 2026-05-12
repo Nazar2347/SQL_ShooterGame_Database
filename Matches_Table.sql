@@ -1,0 +1,7 @@
+CREATE TABLE Matches 
+(
+	match_id INT PRIMARY KEY IDENTITY(1,1),
+	map_name VARCHAR (25) NOT NULL,
+	start_time DATETIME DEFAULT GETDATE(),
+	end_time DATETIME,
+)
