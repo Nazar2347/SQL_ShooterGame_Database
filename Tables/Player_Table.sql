@@ -1,4 +1,4 @@
-/*CREATE TABLE Player 
+CREATE TABLE Player 
 (
 	player_id INT IDENTITY(1,1) PRIMARY KEY, 
 	username VARCHAR(20)UNIQUE NOT NULL,
@@ -6,7 +6,14 @@
 	level INT DEFAULT 1,
 	current_balance INT DEFAULT 0,
 	created_at DATETIME DEFAULT GETDATE()
-);*/
+);
+
+ALTER TABLE Player
+ADD CONSTRAINT CHK_Level CHECK (level >= 1 AND level <= 100);
+
+ALTER TABLE Player
+ADD CONSTRAINT CHK_Balance CHECK (current_balance >= 0);
+
 
 INSERT INTO Player (username, email, level, current_balance, created_at)
 VALUES 

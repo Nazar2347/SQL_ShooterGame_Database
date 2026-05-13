@@ -10,6 +10,10 @@ CREATE TABLE Match_Result
 	FOREIGN KEY (player_id) REFERENCES Player(player_id)
 )
 
+ALTER TABLE Match_Result
+ADD CONSTRAINT CHK_Kills CHECK (kills >= 0),
+    CONSTRAINT CHK_Deaths CHECK (deaths >= 0)
+
 -- AI generated data insertion for Match_Result table
 DECLARE @PlayerID INT = 1;
 DECLARE @MatchesToPlay INT;
