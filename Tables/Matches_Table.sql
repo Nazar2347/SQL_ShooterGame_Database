@@ -1,10 +1,10 @@
-/*CREATE TABLE Matches 
+CREATE TABLE Matches 
 (
 	match_id INT PRIMARY KEY IDENTITY(1,1),
 	map_name VARCHAR (25) NOT NULL,
 	start_time DATETIME DEFAULT GETDATE(),
 	end_time DATETIME,
-)*/
+)
 INSERT INTO Matches (map_name, start_time, end_time)
 VALUES 
     ('Dust 2', '2026-05-10 14:00:00', '2026-05-10 14:25:30'),      -- 25 min match
